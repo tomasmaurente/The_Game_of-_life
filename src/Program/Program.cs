@@ -8,7 +8,7 @@ namespace PII_Game_Of_Life
         static void Main(string[] args)
         {
             // Crear la variable que contenga la url del .txt.
-            string url = "..\\board.txt";
+            string url = "..\\File.txt";
             // Creo un tablero
             Tablero tablero = new Tablero(url); //variable que representa el tablero
 

@@ -1,5 +1,8 @@
-using System;
 using System.Text;
+
+/*
+    Clase que crea un string que representa el tablero.
+*/
 
 namespace PII_Game_Of_Life
 {

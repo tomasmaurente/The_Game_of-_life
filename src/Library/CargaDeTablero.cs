@@ -1,6 +1,7 @@
-﻿using System;
-using System.IO;
-
+﻿using System.IO;
+/*
+    Clase que crea un tablero segun un archivo ".txt".
+*/
 namespace PII_Game_Of_Life
 {
     public class CargaDeTablero

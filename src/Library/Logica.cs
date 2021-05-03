@@ -1,3 +1,7 @@
+/*
+    Clase que crea el siguiente paso del juego segun el tablero actual.
+*/
+
 namespace PII_Game_Of_Life
 {
     public class Logica
@@ -25,6 +29,7 @@ namespace PII_Game_Of_Life
                         }
                     }
                     
+                    // Se crea variable que almacena el estado de la posicion para no utilizar innecesariamente el metodo "SaberValorPosicion"
                     bool estadoPosicion = gameBoard.SaberValorPosicion(x, y);
 
                     if (estadoPosicion)
@@ -34,30 +39,31 @@ namespace PII_Game_Of_Life
 
                     if (estadoPosicion && aliveNeighbors < 2)
                     {
-                        //Celula muere por baja población
+                        //Celula muere por baja población.
                         cloneboard[x,y] = false;
 
                     }
 
                     else if (estadoPosicion && aliveNeighbors > 3)
                     {
-                        //Celula muere por sobrepoblación
+                        //Celula muere por sobrepoblación.
                         cloneboard[x,y] = false;
                     }
 
                     else if (!estadoPosicion && aliveNeighbors == 3)
                     {
-                        //Celula nace por reproducción 
+                        //Celula nace por reproducción.
                         cloneboard[x,y] = true;
                     }
 
                     else
                     {
-                        //Celula mantiene el estado que tenía
+                        //Celula mantiene el estado que tenía.
                         cloneboard[x,y] = estadoPosicion;
                     }
                 }
             }
+            // Se cambia el tablero anterior por el actualizado.
             gameBoard.SetTabla(cloneboard);
         }
     }
