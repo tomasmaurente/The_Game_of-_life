@@ -10,7 +10,7 @@ namespace PII_Game_Of_Life
             // Crear la variable que contenga la url del .txt.
             string url = "..\\board.txt";
             // Creo un tablero
-            bool[,] tablero = CargaDeTablero.CreacionDeTablero(url); //variable que representa el tablero
+            Tablero tablero = new Tablero(url); //variable que representa el tablero
 
             // Creo un bucle que imprima La tabla inicial,
             // luego la modifique,
@@ -22,9 +22,9 @@ namespace PII_Game_Of_Life
                 // Imprime
                 Console.WriteLine(Imprimir.TableroToString(tablero));
                 // Modifica la tabla
-                tablero = Logica.Juego(tablero);
+                Logica.Juego(tablero);
                 // Limpia la consola despues de 0.3s
-                Thread.Sleep(300);
+                Thread.Sleep(500);
                 Console.Clear();
                 // Vuelve a impimir
             }

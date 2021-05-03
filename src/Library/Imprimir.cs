@@ -1,23 +1,21 @@
 using System;
 using System.Text;
-using System.Threading;
 
 namespace PII_Game_Of_Life
 {
     public class Imprimir
     {
-        public static string TableroToString(bool[,] nuevaTabla)
+        public static string TableroToString(Tablero nuevaTabla)
         {
-            int width = nuevaTabla.GetLength(0);
-            int height = nuevaTabla.GetLength(1);
+            int width = nuevaTabla.Width;
+            int height = nuevaTabla.Heigth;
 
-            Console.Clear();
             StringBuilder s = new StringBuilder();
-            for (int y = 0; y < height; y++)
+            for (int y = 0; y<height;y++)
             {
-                for (int x = 0; x < width; x++)
+                for (int x = 0; x<width; x++)
                 {
-                    if (nuevaTabla[x, y])
+                    if(nuevaTabla.SaberValorPosicion(x,y))
                     {
                         s.Append("|X|");
                     }
