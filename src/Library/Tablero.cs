@@ -1,13 +1,10 @@
-using System;
-using System.Text;
-
 namespace PII_Game_Of_Life
 {
     public class Tablero
     {
         private bool[,] tabla;
-        // falta asreadonly
-        public bool[,] Tabla 
+
+        public bool[,] Tabla
         {
             get
             {
@@ -25,10 +22,10 @@ namespace PII_Game_Of_Life
             {
                 return heigth;
             }
-            set 
+            set
             {
                 heigth = value;
-;
+                ;
             }
         }
 
@@ -44,27 +41,30 @@ namespace PII_Game_Of_Life
                 width = value;
             }
         }
-
+        //  Constructor de la clase.  
         public Tablero(string url)
         {
             Tabla = CargaDeTablero.CreacionDeTablero(url);
             Heigth = this.tabla.GetLength(1);
             Width = this.tabla.GetLength(0);
         }
-
+        
+        // Metodo para cambiar un valor especifico de la tabla.
         public void Cambiar(int x, int y, bool Valor)
         {
-            this.tabla[x,y] = Valor;
+            this.tabla[x, y] = Valor;
         }
-
-        public bool SaberValorPosicion(int x, int y)
-        {
-            return this.tabla[x,y];
-        }
-
-        public void SetTabla (bool[,] nuevaTabla)
+        
+        // Metodo para cambiar todos los valores de la tabla.
+        public void SetTabla(bool[,] nuevaTabla)
         {
             this.tabla = nuevaTabla;
+        }
+
+        // Metodo para saber el valor de un lugar especifico de la tabla.
+        public bool SaberValorPosicion(int x, int y)
+        {
+            return this.tabla[x, y];
         }
     }
 }
