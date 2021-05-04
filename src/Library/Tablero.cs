@@ -1,9 +1,12 @@
+/*
+    Siguiendo el principio Expert, creamos una clase que encapsule toda la información del tablero, y continuando con este principio
+    todos sus metodos.
+*/
 namespace PII_Game_Of_Life
 {
     public class Tablero
     {
         private bool[,] tabla;
-
         public bool[,] Tabla
         {
             get
@@ -28,7 +31,6 @@ namespace PII_Game_Of_Life
                 ;
             }
         }
-
         private int width;
         public int Width
         {
@@ -41,6 +43,7 @@ namespace PII_Game_Of_Life
                 width = value;
             }
         }
+        
         //  Constructor de la clase.  
         public Tablero(string url)
         {
@@ -58,7 +61,7 @@ namespace PII_Game_Of_Life
         // Metodo para cambiar todos los valores de la tabla.
         public void SetTabla(bool[,] nuevaTabla)
         {
-            this.tabla = nuevaTabla;
+            Tabla = nuevaTabla;
         }
 
         // Metodo para saber el valor de un lugar especifico de la tabla.
