@@ -1,5 +1,6 @@
 /*
     Clase que crea el siguiente paso del juego segun el tablero actual.
+    Para cumplir con el principio Expert, encapsulamos las reglas deel juego en la clase Logica.
 */
 
 namespace PII_Game_Of_Life
